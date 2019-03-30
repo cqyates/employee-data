@@ -44,5 +44,16 @@ database.ref().on("child_added", function(childSnapshot) {
   console.log(childSnapshot.val().startDate)
   console.log(childSnapshot.val().monthlyRate)
   console.log(childSnapshot.val().dateAdded)
-  
+
+  $('#employee-table').append(`
+    <tr>
+      <td>${childSnapshot.val().empName}</td>
+      <td>${childSnapshot.val().empRole}</td>
+      <td>${childSnapshot.val().startDate}</td>
+      <td>Calculate this</td>
+      <td>${childSnapshot.val().monthlyRate}</td>
+      <td>Calculate this</td>
+    </tr>
+  `)
+
 })
